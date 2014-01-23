@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Stop a second </title>
+		<link href="css/app.css" rel="stylesheet" type="text/css"/>
+	</head>
+        <body>
+		<div class="container">
+			<div class="row">
+				<div class="logo"><img src="mart.png"  /></div>
+				<div class="title">URL redirector</div>
+
+				<div class="header-control-right" id="leftControlButton">
+					<div class="switch-status" >Enabled</div>
+					<div class="switch-button" id="btnOff"><img src="images/enabled.png"/></div>
+				</div>
+				<span class="separator"></span>
+
+				<div class="header-control-right" id="logout">
+					<a href="#"><div class="switch-status" >Log out</div></a>
+				</div>
+				<span class="separator"></span>
+				
+				<div class="header-control-right" id="changePassword">
+					<div class="switch-status" >Edit account</div>
+					<div class="switch-button" ><img src="images/user.png"/></div>
+				</div>
+				<span class="separator"></span>
+				
+				<div class="right-button" id="requireLogin">
+					<div class="switch-status" >Require login</div>
+					<div class="switch-button"><input type="checkbox"  /></div>
+				</div>
+
+				<span style="clear:both;"></span>
+			</div>
+            <div style="min-height:500px;">
+                    <table class = "table" id="ruleList">
+
+                    </table>
+            </div>
+            <div class="footer">
+            	<div class="left col">
+            		<ul>
+            			<li>Author: DNguyen</li>
+            			<li>Home: <a href="http:\\www.bluesky.me">www.bluzky.me</a></li>
+            		</ul>
+            	</div>
+            	<div class="right col">
+            		<ul>
+            			<li><a href="#">Fork me on Github</a></li>
+            			<li>Give a beer :) : <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</li>
+            		</ul>
+            	</div>
+            </div>
+		</div>
+
+		<div id="login-window" class=" container">
+			<div id="login-screen" class="modal-background"></div>
+			<div class="login-box" id="login-box">
+					<div id="button-cancel"><img src="images/cancel.png" width="32px" /></div>
+					<div class="col-md-12" id="login-title">LOG IN</div>
+					<div class="col-md-12" ><input type="text" id="userName" placeholder="User name"/></div>
+					<div class="col-md-12"> <input type="password" id="password" placeholder="Password"/></div>
+					<div class="col-md-12"> <input type="password" id="repassword" placeholder="Re enter password"/></div>
+					<div id="message" style="text-align: center; font-size: 13px;padding: 5px 15px;"></div>
+					<div class="button-lg" id="continue">Continue</div>
+			</div>
+		</div>
+		
+	
+	<script src="app.js"></script>
+	</body>
+</html>

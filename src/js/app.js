@@ -1,4 +1,4 @@
-
+import '../scss/index.scss';
 // Array of redirect entry
 
 var myExtension = {};

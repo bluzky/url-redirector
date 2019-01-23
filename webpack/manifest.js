@@ -37,9 +37,9 @@ const dir = src => path.join(__dirname, src)
 // ----------
 
 const paths = {
-  src: dir('..'),
-  build: dir('../../build/'),
-  publicPath: "/build/"
+  src: dir('../src'),
+  build: dir('../build/'),
+  publicPath: "/"
 }
 
 // -------------------

@@ -103,7 +103,7 @@ if (manifest.IS_PRODUCTION) {
 // -----------------
 
 module.exports = {
-  devtool: manifest.IS_PRODUCTION ? false : "cheap-eval-source-map",
+  devtool: manifest.IS_PRODUCTION ? false : "source-map",
   context: path.join(manifest.paths.src, "js"),
   entry: entries,
   output: {
@@ -115,6 +115,9 @@ module.exports = {
     rules
   },
   resolve,
+  node: {
+    global: false
+  },
   plugins,
   optimization
 };

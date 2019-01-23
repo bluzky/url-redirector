@@ -1,4 +1,4 @@
-const manifest = require("../manifest");
+const manifest = require("./manifest");
 
 const plugins = [];
 
@@ -23,7 +23,7 @@ const extractPlugin =
 
 // copy plugin
 const path = require('path'),
-      CopyWebpackPlugin = require('copy-webpack-plugin')
+      CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const copyPlugin = new CopyWebpackPlugin([
   {
@@ -33,8 +33,16 @@ const copyPlugin = new CopyWebpackPlugin([
   {
     from: path.join(manifest.paths.src, 'static/images'),
     to: path.join(manifest.paths.build, 'images')
+  },
+  {
+    from: path.join(manifest.paths.src, '*.html'),
+    to: path.join(manifest.paths.build, 'build')
+  },
+  {
+    from: path.join(manifest.paths.src, 'manifest.json'),
+    to: path.join(manifest.paths.build, '.')
   }
-])
+]);
 
 
 plugins.push(copyPlugin);
@@ -59,7 +67,8 @@ plugins.push(
     $: "jquery",
     jQuery: "jquery",
     "window.jQuery": "jquery",
-    Popper: ["popper.js", "default"]
+    Popper: ["popper.js", "default"],
+    global: 'window'
   }),
   new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
 );
@@ -71,12 +80,12 @@ plugins.push(
 // ----------------------------
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 if (manifest.IS_DEVELOPMENT) {
-  plugins.push(
-    new BundleAnalyzerPlugin()
+  // plugins.push(
+    // new BundleAnalyzerPlugin()
     // new webpack.NoEmitOnErrorsPlugin(),
     // new webpack.NamedModulesPlugin(),
     // new webpack.HotModuleReplacementPlugin()
-  );
+  // );
 }
 
 

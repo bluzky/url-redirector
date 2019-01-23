@@ -21,6 +21,8 @@ const extractPlugin =
     allChunks: true,
   });
 
+plugins.push(extractPlugin);
+
 // copy plugin
 const path = require('path'),
       CopyWebpackPlugin = require('copy-webpack-plugin');

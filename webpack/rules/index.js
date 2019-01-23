@@ -1,3 +1,5 @@
+const manifest = require('../manifest');
+
 module.exports = [
   // vue
   // {
@@ -10,6 +12,20 @@ module.exports = [
   //   }
   // },
 
+  // preact
+
+  // {
+	// 	test: /\.jsx?$/,
+	// 	exclude: manifest.paths.src,
+	// 	enforce: 'pre',
+	// 	use: 'source-map-loader'
+	// },
+	// {
+	// 	test: /\.jsx?$/,
+	// 	exclude: /node_modules/,
+	// 	use: 'babel-loader'
+	// },
+
   // js
   {
     test    : /\.(js)$/,
@@ -21,10 +37,11 @@ module.exports = [
           ["env", {
             "targets": {
               "browsers": ["last 2 versions", "> 2%"]
-            }
+            },
+            jsxPragma: "h"
           }]
         ],
-        "plugins": ["syntax-dynamic-import"]
+        "plugins": ["syntax-dynamic-import", ["transform-react-jsx", { "pragma":"h" }]]
       }
     }],
   },

@@ -41,7 +41,7 @@ module.exports = [
             jsxPragma: "h"
           }]
         ],
-        "plugins": ["syntax-dynamic-import", ["transform-react-jsx", { "pragma":"h" }]]
+        "plugins": ["syntax-dynamic-import", ["transform-react-jsx", { "pragma":"h" }], "babel-plugin-transform-object-rest-spread"]
       }
     }],
   },

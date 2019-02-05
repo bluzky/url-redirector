@@ -34,14 +34,13 @@ module.exports = [
       loader: 'babel-loader',
       options: {
         "presets": [
-          ["env", {
+          ["@babel/preset-env", {
             "targets": {
               "browsers": ["last 2 versions", "> 2%"]
             },
-            jsxPragma: "h"
           }]
         ],
-        "plugins": ["syntax-dynamic-import", ["transform-react-jsx", { "pragma":"h" }], "babel-plugin-transform-object-rest-spread"]
+        "plugins": ["@babel/syntax-dynamic-import", ["@babel/plugin-transform-react-jsx", { "pragma":"h" }], "babel-plugin-transform-object-rest-spread", "@babel/plugin-transform-arrow-functions", "@babel/plugin-proposal-class-properties"]
       }
     }],
   },

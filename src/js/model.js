@@ -8,7 +8,7 @@ export default class RuleDb {
 	}
 
 	inform() {
-		store(this.key, this.todos);
+		store(this.key, this.rules);
 		this.onChanges.forEach( cb => cb() );
 	}
 

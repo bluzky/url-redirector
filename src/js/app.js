@@ -5,13 +5,12 @@ import '../scss/index.scss';
 
 import { h, render } from 'preact';
 import MappingTable from './mapping_table';
-import store from './data_store.js';
 
-store.load(function(){
+
   render((
-      <MappingTable rules={store.rules}></MappingTable>
+      <MappingTable></MappingTable>
   ), document.getElementById('content'));
-});
+
 
 var myExtension = {};
 var Database = new Array();

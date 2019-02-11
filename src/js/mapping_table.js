@@ -1,6 +1,7 @@
 import { h, render, Component } from 'preact';
 
 import RuleDb from './model.js';
+import RuleRow from './rule.js';
 
 export default class MappingTable extends Component {
   constructor() {
@@ -70,18 +71,11 @@ export default class MappingTable extends Component {
             <tbody>
             {
               rules.map(rule =>{
-                  <tr>
-                  <td><input type="text" disabled placeholder="matching pattern" name="from" value={rule.from} onChange={this.handleChange}/></td>
-                  <td class="arrow"><i class="ti-angle-right"></i></td>
-                  <td><input type="text" disabled placeholder="redirect to" name="to" value={rule.to} onChange={this.handleChange} /></td>
-                  <td class="btn-group">
-                  <button class="button-clear btn" onClick={this.addRule}><i class="ti-check"></i></button>
-                  <button class="button-clear btn" onClick={this.addRule}><i class="ti-close"></i></button>
-                  </td>
-                  </tr>
+                return(
+                    <RuleRow rule={rule}></RuleRow>
+                );
               })
             }
-            
 
             <tr>
             <td><input type="text" placeholder="matching pattern" name="from" value={from} onChange={this.handleChange}/></td>
